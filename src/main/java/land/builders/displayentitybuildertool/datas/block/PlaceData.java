@@ -22,7 +22,6 @@ public class PlaceData {
     private Player player;
     private boolean placeOnEntity;
 
-
     public PlaceData setMaterial(Material material){
         this.material = material;
         return this;
@@ -163,7 +162,9 @@ public class PlaceData {
         } else if (gapZ <= -0.4 && gapZ <= gapX && gapZ <= gapY){
             this.location.add(0,0,-1);
         }
+
     }
+
 
     public boolean checkBlockCanBeUse(ItemStack is){
 
@@ -179,6 +180,11 @@ public class PlaceData {
 
         if (is.getType().name().toLowerCase().matches(".*slab+")){
             this.itemType = ItemType.Slab;
+            return true;
+        }
+
+        if (is.getType().name().toLowerCase().matches(".*stairs+")){
+            this.itemType = ItemType.Stairs;
             return true;
         }
         return false;
@@ -213,4 +219,6 @@ public class PlaceData {
     public boolean isPlaceOnEntity() {
         return placeOnEntity;
     }
+
+
 }

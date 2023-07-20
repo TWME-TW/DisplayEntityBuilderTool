@@ -30,6 +30,10 @@ public class RightClickListener implements Listener {
 
         ItemStack itemStack = player.getInventory().getItemInMainHand();
 
+        if (!itemStack.getType().isBlock()){
+            return;
+        }
+
         PlaceData placeData = new PlaceData();
 
         placeData.setSlabYaw(player.getLocation().getYaw())
@@ -58,9 +62,8 @@ public class RightClickListener implements Listener {
         //Log.log("Placing Entity");
 
         PlaceUtil.place(placeData);
-
-        //Log.log("Place Entity Pass");
         player.playSound(player.getLocation(), Sound.BLOCK_STONE_PLACE,1f,1f);
 
+        //Log.log("Place Entity Pass");
     }
 }
