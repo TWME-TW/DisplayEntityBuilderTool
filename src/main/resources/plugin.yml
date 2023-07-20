@@ -1,0 +1,19 @@
+name: DisplayEntityBuilderTool
+version: '${project.version}'
+main: land.builders.displayentitybuildertool.DisplayEntityBuilderTool
+api-version: '1.20'
+authors: [TWME]
+commands:
+  standslab:
+    aliases:
+      - standslab
+    permission: displayentitybuildtool.gui.slab
+
+
+permissions:
+  displayentitybuildtool.gui.slab:
+    default: op
+  displayentitybuildtool.place:
+    default: op
+  displayentitybuildtool.break:
+    default: op
