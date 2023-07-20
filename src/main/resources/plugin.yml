@@ -12,7 +12,7 @@ commands:
     permission: displayentitybuildtool.gui.slab
   standstairs:
     aliases:
-      - aliases
+      - standstairs
     permission: displayentitybuildtool.gui.stairs
 
 permissions:
