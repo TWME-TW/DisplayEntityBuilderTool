@@ -174,6 +174,9 @@ public class PlaceData {
         if (!is.getType().isBlock()) {
             return false;
         }
+        if (is.getItemMeta() == null) {
+            return false;
+        }
         if (!is.getItemMeta().isUnbreakable()){
             return false;
         }
