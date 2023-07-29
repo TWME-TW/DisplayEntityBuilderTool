@@ -14,6 +14,7 @@ import org.bukkit.util.Vector;
 public class PlaceData {
 
     private Location location;
+    private Location entityLocation;
     private Material material;
     private PlaceMode placeMode;
     private ItemType itemType;
@@ -59,6 +60,11 @@ public class PlaceData {
 
         return this;
     }
+
+    public PlaceData setLocation(Location location){
+        this.location = location;
+        return this;
+    }
     public PlaceData setLocation(Player player){
         this.world = player.getWorld();
 
@@ -73,6 +79,7 @@ public class PlaceData {
             if (rayTE.getHitEntity().getLocation().distance(eyeLocation) < rayTB.getHitBlock().getLocation().distance(eyeLocation)){
                 //player.sendMessage("1: " + rayTE.getHitPosition().getX() + " " + rayTE.getHitPosition().getY() + " " + rayTE.getHitPosition().getZ());
                 calculateLocationByEntity(rayTE);
+                entityLocation = rayTE.getHitEntity().getLocation();
                 placeOnEntity = true;
             } else {
                 //player.sendMessage("2: " + rayTB.getHitPosition().getX() + " " + rayTB.getHitPosition().getY() + " " + rayTB.getHitPosition().getZ());
@@ -82,6 +89,7 @@ public class PlaceData {
         } else if (rayTE != null){
             //player.sendMessage("3: " + rayTE.getHitPosition().getX() + " " + rayTE.getHitPosition().getY() + " " + rayTE.getHitPosition().getZ());
             calculateLocationByEntity(rayTE);
+            entityLocation = rayTE.getHitEntity().getLocation();
             placeOnEntity = true;
         } else if (rayTB != null){
             //player.sendMessage("4: " + rayTB.getHitPosition().getX() + " " + rayTB.getHitPosition().getY() + " " + rayTB.getHitPosition().getZ());
@@ -223,5 +231,7 @@ public class PlaceData {
         return placeOnEntity;
     }
 
-
+    public Location getEntityLocation() {
+        return entityLocation;
+    }
 }
