@@ -47,7 +47,17 @@ public class RightClickListener implements Listener {
         }
 
         if (!placeData.checkBlockCanBeUse(itemStack)) {
+
             if (placeData.isPlaceOnEntity()){
+
+                if (player.isSneaking()){
+                    placeData.setPlaceMode(PlaceMode.Block);
+                    placeData.setLocation(placeData.getEntityLocation());
+                    PlaceUtil.place(placeData);
+                    event.setCancelled(true);
+                    return;
+                }
+
                 placeData.setPlaceMode(PlaceMode.Block);
                 PlaceUtil.place(placeData);
                 event.setCancelled(true);
@@ -60,7 +70,9 @@ public class RightClickListener implements Listener {
         event.setCancelled(true);
 
         //Log.log("Placing Entity");
-
+        if (placeData.isPlaceOnEntity() && player.isSneaking()){
+            placeData.setLocation(placeData.getEntityLocation());
+        }
         PlaceUtil.place(placeData);
         player.playSound(player.getLocation(), Sound.BLOCK_STONE_PLACE,1f,1f);
 
