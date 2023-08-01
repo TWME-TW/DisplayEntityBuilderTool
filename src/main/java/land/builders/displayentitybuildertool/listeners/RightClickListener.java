@@ -45,11 +45,13 @@ public class RightClickListener implements Listener {
         if (!placeData.existLocation()){
             return;
         }
-
+        // 放置一般方快
         if (!placeData.checkBlockCanBeUse(itemStack)) {
 
+            // 放到實體上
             if (placeData.isPlaceOnEntity()){
 
+                // 直接將方塊放置到方塊內
                 if (player.isSneaking()){
                     placeData.setPlaceMode(PlaceMode.Block);
                     placeData.setLocation(placeData.getEntityLocation());
@@ -70,6 +72,7 @@ public class RightClickListener implements Listener {
         event.setCancelled(true);
 
         //Log.log("Placing Entity");
+        // 放置實體
         if (placeData.isPlaceOnEntity() && player.isSneaking()){
             placeData.setLocation(placeData.getEntityLocation());
         }
