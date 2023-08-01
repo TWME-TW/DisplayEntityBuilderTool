@@ -3,8 +3,8 @@ version: '${project.version}'
 main: land.builders.displayentitybuildertool.DisplayEntityBuilderTool
 api-version: '1.20'
 authors: [TWME]
-softdepend:
-  - GriefDefender
+website: https://github.com/TWME-TW/DisplayEntityBuilderTool
+
 commands:
   standslab:
     aliases:
