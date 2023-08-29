@@ -6,6 +6,7 @@ import org.bukkit.FluidCollisionMode;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.RayTraceResult;
@@ -22,6 +23,7 @@ public class PlaceData {
     private World world;
     private Player player;
     private boolean placeOnEntity;
+    private Entity hitEntity;
 
     public PlaceData setMaterial(Material material){
         this.material = material;
@@ -131,6 +133,7 @@ public class PlaceData {
             blockX =  rTR.getHitEntity().getLocation().getBlockX();
             blockY =  rTR.getHitEntity().getLocation().getBlockY();
             blockZ =  rTR.getHitEntity().getLocation().getBlockZ();
+            hitEntity = rTR.getHitEntity();
         } else if (!(rTR.getHitBlock() == null)) {
             blockX =  rTR.getHitBlock().getLocation().getBlockX();
             blockY =  rTR.getHitBlock().getLocation().getBlockY();
@@ -233,5 +236,9 @@ public class PlaceData {
 
     public Location getEntityLocation() {
         return entityLocation;
+    }
+
+    public Entity getHitEntity() {
+        return hitEntity;
     }
 }

@@ -5,6 +5,7 @@ import land.builders.displayentitybuildertool.datas.block.PlaceMode;
 import land.builders.displayentitybuildertool.util.Log;
 import land.builders.displayentitybuildertool.util.PlaceUtil;
 import org.bukkit.*;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -50,6 +51,9 @@ public class RightClickListener implements Listener {
 
             // 放到實體上
             if (placeData.isPlaceOnEntity()){
+                if (!(EntityType.ITEM_DISPLAY == placeData.getHitEntity().getType())){
+                    return;
+                }
 
                 // 直接將方塊放置到方塊內
                 if (player.isSneaking()){
@@ -73,7 +77,7 @@ public class RightClickListener implements Listener {
 
         //Log.log("Placing Entity");
         // 放置實體
-        if (placeData.isPlaceOnEntity() && player.isSneaking()){
+        if (placeData.isPlaceOnEntity() && player.isSneaking() && (EntityType.ITEM_DISPLAY == placeData.getHitEntity().getType())){
             placeData.setLocation(placeData.getEntityLocation());
         }
         PlaceUtil.place(placeData);
