@@ -29,7 +29,6 @@ public final class DisplayEntityBuilderTool extends JavaPlugin {
     private void registerCommands() {
         this.getCommand("standslab").setExecutor(new OpenStandSlabGuiCommand());
         this.getCommand("standstairs").setExecutor(new OpenStandStairsGuiCommand());
-
     }
 
 
