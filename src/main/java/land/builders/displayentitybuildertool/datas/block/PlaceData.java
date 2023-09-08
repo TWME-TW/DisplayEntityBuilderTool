@@ -73,8 +73,8 @@ public class PlaceData {
         Location eyeLocation = player.getEyeLocation();
         Vector direction = player.getEyeLocation().getDirection();
 
-        RayTraceResult rayTE = world.rayTraceEntities(eyeLocation,direction,4,0.6, p -> !player.getUniqueId().equals(p.getUniqueId()));
-        RayTraceResult rayTB = world.rayTraceBlocks(eyeLocation, direction, 4, FluidCollisionMode.ALWAYS, false);
+        RayTraceResult rayTE = world.rayTraceEntities(eyeLocation,direction,5,0.6, p -> !player.getUniqueId().equals(p.getUniqueId()));
+        RayTraceResult rayTB = world.rayTraceBlocks(eyeLocation, direction, 5, FluidCollisionMode.ALWAYS, false);
 
         if (rayTE != null && rayTB != null){
 
