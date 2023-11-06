@@ -4,9 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>land.builders</groupId>
+  <groupId>dev.twme</groupId>
   <artifactId>DisplayEntityBuilderTool</artifactId>
-  <version>1.2</version>
+  <version>1.4</version>
   <packaging>jar</packaging>
 
   <name>DisplayEntityBuilderTool</name>
@@ -71,13 +71,13 @@
       <dependency>
           <groupId>org.spigotmc</groupId>
           <artifactId>spigot-api</artifactId>
-          <version>1.20.1-R0.1-SNAPSHOT</version>
+          <version>1.20.2-R0.1-SNAPSHOT</version>
           <scope>provided</scope>
       </dependency>
       <dependency>
           <groupId>xyz.xenondevs.invui</groupId>
           <artifactId>invui</artifactId>
-          <version>1.12</version>
+          <version>1.23</version>
           <type>pom</type>
       </dependency>
   </dependencies>

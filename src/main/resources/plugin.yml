@@ -1,6 +1,6 @@
 name: DisplayEntityBuilderTool
 version: '${project.version}'
-main: land.builders.displayentitybuildertool.DisplayEntityBuilderTool
+main: dev.twme.displayentitybuildertool.DisplayEntityBuilderTool
 api-version: '1.20'
 authors: [TWME]
 website: https://github.com/TWME-TW/DisplayEntityBuilderTool
