@@ -2,7 +2,7 @@ name: DisplayEntityBuilderTool
 version: '${project.version}'
 main: dev.twme.displayentitybuildertool.DisplayEntityBuilderTool
 api-version: '1.20'
-authors: [TWME]
+authors: [ TWME ]
 website: https://github.com/TWME-TW/DisplayEntityBuilderTool
 
 commands:
