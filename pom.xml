@@ -6,7 +6,7 @@
 
   <groupId>dev.twme</groupId>
   <artifactId>DisplayEntityBuilderTool</artifactId>
-  <version>1.4</version>
+  <version>1.6</version>
   <packaging>jar</packaging>
 
   <name>DisplayEntityBuilderTool</name>
@@ -71,13 +71,13 @@
       <dependency>
           <groupId>org.spigotmc</groupId>
           <artifactId>spigot-api</artifactId>
-          <version>1.20.2-R0.1-SNAPSHOT</version>
+          <version>1.20.4-R0.1-SNAPSHOT</version>
           <scope>provided</scope>
       </dependency>
       <dependency>
           <groupId>xyz.xenondevs.invui</groupId>
           <artifactId>invui</artifactId>
-          <version>1.23</version>
+          <version>1.24</version>
           <type>pom</type>
       </dependency>
   </dependencies>
